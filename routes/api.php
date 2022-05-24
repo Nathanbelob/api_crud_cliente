@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{UsuarioController};
+use App\Http\Controllers\{UsuarioController, ClienteController};
 
 
 /*
@@ -19,6 +19,9 @@ Route::post('/login', [UsuarioController::class, 'login']);
 
 Route::middleware('auth:api')->group(function($router) {
     Route::post('/logout', [UsuarioController::class, 'logout']);
+
+    Route::post('/cliente/buscar', [ClienteController::class, 'search']);
+    Route::resource('/cliente', ClienteController::class);
 });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
