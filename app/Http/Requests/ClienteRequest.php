@@ -47,7 +47,7 @@ class ClienteRequest extends CustomRulesRequest
         return [
             'nome' => 'required',
             'cpf' => 'max:11',
-            'data_nascimento' => 'required|date'
+            'data_nascimento' => 'date'
         ];
     }
 
